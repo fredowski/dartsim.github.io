@@ -76,12 +76,63 @@
         <div class="pull-left" style="border-radius: 5px; background-color: white; margin: 10px; border: 1px solid #333;">
           <img src="DART logo.jpg" alt="logo" style="margin: 20px;" width="300">
         </div>
-        <p>
-          DART (Dynamic Animation and Robotics Toolkit) is a collaborative, cross-platform, open source library created by the Georgia Tech Graphics Lab and Humanoid Robotics Lab. The library provides data structures and algorithms for kinematic and dynamic applications in robotics and computer animation. DART is distinguished by its accuracy and stability due to its use of generalized coordinates to represent articulated rigid body systems and Featherstone's Articulated Body Algorithm to compute the dynamics of motion. For developers, in contrast to many popular physics engines which view the simulator as a black box, DART gives full access to internal kinematic and dynamic quantities, such as the mass matrix, Coriolis and centrifugal forces, transformation matrices and their derivatives. DART also provides efficient computation of Jacobian matrices for arbitrary body points and coordinate frames. The frame semantics of DART allows users to define arbitrary reference frames (both inertial and non-inertial) and use those frames to specify or request data. For air-tight code safety, forward kinematics and dynamics values are updated automatically through lazy evaluation, making DART suitable for real time controllers. Contacts and collisions are handled using an implicit time-stepping, velocity-based LCP (linear-complementarity problem) to guarantee non-penetration, directional friction, and approximated Coulomb friction cone conditions. DART has applications in robotics and computer animation because it features a multibody dynamic simulator and tools for control and motion planning. Multibody dynamic simulation in DART is an extension of RTQL8, an open source software created by the Georgia Tech Graphics Lab.
-        </p>
-        <p>
-          DART is fully integrated with <a href="http://gazebosim.org">Gazebo</a>, a multi-robot simulator for outdoor environments. DART supports most features provided in Gazebo, including the link structure, sensor simulation, and all the joint types. DART also supports models in URDF, SDF, and VSK file formats.
-        </p>
+        <h3>
+<a id="introduction" class="anchor" href="#introduction" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Introduction</h3>
+
+<p>DART (Dynamic Animation and Robotics Toolkit) is a collaborative, cross-platform, open source library created by the Georgia Tech Graphics Lab and Humanoid Robotics Lab. The library provides data structures and algorithms for kinematic and dynamic applications in robotics and computer animation. DART is distinguished by its accuracy and stability due to its use of generalized coordinates to represent articulated rigid body systems and Featherstone’s Articulated Body Algorithm to compute the dynamics of motion. For developers, in contrast to many popular physics engines which view the simulator as a black box, DART gives full access to internal kinematic and dynamic quantities, such as the mass matrix, Coriolis and centrifugal forces, transformation matrices and their derivatives. DART also provides an efficient computation of Jacobian matrices for arbitrary body points and coordinate frames. The frame semantics of DART allows users to define arbitrary reference frames (both inertial and non-inertial) and use those frames to specify or request data. For air-tight code safety, forward kinematics and dynamics values are updated automatically through lazy evaluation, making DART suitable for real-time controllers. In addition, DART gives provides flexibility to extend the API for embedding user-provided classes into DART data structures. Contacts and collisions are handled using an implicit time-stepping, velocity-based LCP (linear complementarity problem) to guarantee non-penetration, directional friction, and approximated Coulomb friction cone conditions. DART has applications in robotics and computer animation because it features a multibody dynamic simulator and various kinematic tools for control and motion planning.</p>
+
+<h3>
+<a id="features" class="anchor" href="#features" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features</h3>
+
+<h4>
+<a id="general" class="anchor" href="#general" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>General</h4>
+
+<ul>
+<li>Open source under BSD license written in C++.</li>
+<li>Support Linux, Mac OSX, and Windows.</li>
+<li>Fully integrated with Gazebo.</li>
+<li>Support models described in URDF and SDF formats.</li>
+<li>Provide default integration methods, semi-implicit Euler and RK4, as well as extensible</li>
+<li>API for other numerical integration methods.</li>
+<li>Support multiple collision detectors: FCL and Bullet.</li>
+<li>Support lazy evaluation and automatic update of kinematic and dynamic quantities.</li>
+<li>Provide extensible API for embedding user-provided classes into DART data structures.</li>
+<li>Support comprehensive recording of events in simulation history.</li>
+<li>Support OpenGL and OpenSceneGraph.</li>
+<li>Provide extensible API to interface with various optimization methods</li>
+</ul>
+
+<h4>
+<a id="kinematics" class="anchor" href="#kinematics" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Kinematics</h4>
+
+<ul>
+<li>Support numerous types of Joint.</li>
+<li>Support numerous primitive and arbitrary body shapes with customizable inertial and material properties.</li>
+<li>Support flexible skeleton modeling: cloning and reconfiguring skeletons or subsections of a skeleton.</li>
+<li>Provide comprehensive access to kinematic states (e.g. transformation, position, velocity, or acceleration) of arbitrary entity and coordinate frames</li>
+<li>Provide comprehensive access to various Jacobian matrices and their derivatives.</li>
+<li>Support flexible conversion of coordinate frames.</li>
+<li>A fully modular inverses kinematics framework</li>
+<li>A plug-and-play hierarchical whole-body inverse kinematics solver</li>
+</ul>
+
+<h4>
+<a id="dynamics" class="anchor" href="#dynamics" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Dynamics</h4>
+
+<ul>
+<li>Achieve high performance for articulated dynamic systems using Lie Group representation and Featherstone hybrid algorithms.</li>
+<li>Enforce joints between body nodes exactly using generalized coordinates.</li>
+<li>Provide comprehensive API for dynamic quantities and their derivatives, such as mass matrix, Coriolis force, gravitational force, other external and internal forces.</li>
+<li>Support both rigid and soft body nodes.</li>
+<li>Model viscoelastic joint dynamics with joint friction and hard joint limits.</li>
+<li>Support various types of actuators.</li>
+<li>Handle contacts and collisions using an implicit LCP to guarantee non-penetration, directional friction, and approximated Coulomb friction cone conditions.</li>
+<li>Support ”Island” technique to subdivide constraint handling for efficient performance.</li>
+<li>Support various Cartesian constraints and provide extensible API for user-defined constraints.</li>
+<li>Provide multiple constraint solvers: Lemke method, Dantzig method, and PSG method.</li>
+<li>Support dynamic systems with closed-loop structures.</li>
+</ul>
+          
       </div>
     </div>
 
